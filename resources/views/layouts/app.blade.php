@@ -10,6 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Prevent Dark Mode FOUC (Flash of Unstyled Content) -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
@@ -24,8 +33,11 @@
         h1, h2, h3, h4, h5, h6, .font-heading { font-family: var(--font-heading); }
     </style>
 </head>
-<body x-data="{ darkMode: localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) }" 
-      x-init="$watch('darkMode', val => localStorage.setItem('theme', val ? 'dark' : 'light'))" 
+<body x-data="{ 
+        darkMode: localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches),
+        searchOpen: false
+      }" 
+      x-init="$watch('darkMode', val => { localStorage.setItem('theme', val ? 'dark' : 'light'); if(val) { document.documentElement.classList.add('dark'); } else { document.documentElement.classList.remove('dark'); } })" 
       :class="{ 'dark': darkMode }"
       class="bg-brand-surface dark:bg-gray-900 font-sans text-brand-text dark:text-gray-100 flex flex-col min-h-screen transition-colors duration-300">
     
@@ -57,7 +69,7 @@
                 <!-- Right Side Actions Desktop -->
                 <div class="hidden sm:ml-6 sm:flex sm:items-center space-x-4">
                     <!-- Global Search Trigger -->
-                    <button @click="$dispatch('open-search')" class="text-gray-400 hover:text-brand-dark dark:hover:text-brand-light transition flex items-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" title="Cari (Ctrl+K)">
+                    <button @click="searchOpen = true" class="text-gray-400 hover:text-brand-dark dark:hover:text-brand-light transition flex items-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" title="Cari (Ctrl+K)">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </button>
                     
@@ -67,12 +79,6 @@
                         <svg x-show="darkMode" class="w-5 h-5" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </button>
 
-                    <div class="h-6 w-px bg-gray-200 dark:bg-gray-700"></div>
-
-                    <a href="{{ route('admin.dashboard') }}" class="text-gray-500 dark:text-gray-400 hover:text-brand-dark dark:hover:text-white transition flex items-center text-sm font-medium">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
-                        Admin Panel
-                    </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -98,7 +104,7 @@
                 <a href="{{ route('public.downloads.index') }}" class="block pl-3 pr-4 py-2 border-l-4 {{ request()->routeIs('public.downloads.*') ? 'border-brand-light text-brand-dark dark:text-brand-light bg-green-50 dark:bg-gray-700' : 'border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300' }} text-base font-medium">Aset Unduhan</a>
                 
                 <!-- Search & Theme Mobile -->
-                <button @click="$dispatch('open-search'); mobileMenuOpen = false" class="w-full text-left block pl-3 pr-4 py-2 border-l-4 border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 text-base font-medium">
+                <button @click="searchOpen = true; mobileMenuOpen = false" class="w-full text-left block pl-3 pr-4 py-2 border-l-4 border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 text-base font-medium">
                     <div class="flex items-center"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg> Cari (Ctrl+K)</div>
                 </button>
                 <button @click="darkMode = !darkMode" class="w-full text-left block pl-3 pr-4 py-2 border-l-4 border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 text-base font-medium">
@@ -109,7 +115,6 @@
                     </div>
                 </button>
 
-                <a href="{{ route('admin.dashboard') }}" class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 text-base font-medium">Admin Panel</a>
             </div>
         </div>
     </header>
@@ -121,7 +126,6 @@
 
     <!-- Command Palette (Global Search) -->
     <div x-data="{ 
-            open: false, 
             search: '', 
             results: [],
             isLoading: false,
@@ -139,7 +143,7 @@
                     });
             },
             init() {
-                this.$watch('open', value => {
+                this.$watch('searchOpen', value => {
                     if (value) {
                         setTimeout(() => this.$refs.searchInput.focus(), 100);
                     } else {
@@ -149,22 +153,21 @@
                 })
             }
          }" 
-         @keydown.window.ctrl.k.prevent="open = true"
-         @keydown.window.meta.k.prevent="open = true"
-         @keydown.escape.window="open = false"
-         @open-search.window="open = true"
-         x-show="open" 
+         @keydown.window.ctrl.k.prevent="searchOpen = true"
+         @keydown.window.meta.k.prevent="searchOpen = true"
+         @keydown.escape.window="searchOpen = false"
+         x-show="searchOpen" 
          class="fixed inset-0 z-[100] overflow-y-auto pt-[10vh] sm:pt-[20vh] px-4 pb-20"
          style="display: none;">
         
         <!-- Backdrop -->
-        <div x-show="open" 
+        <div x-show="searchOpen" 
              x-transition.opacity.duration.300ms
-             @click="open = false"
+             @click="searchOpen = false"
              class="fixed inset-0 bg-gray-900/60 backdrop-blur-sm transition-opacity"></div>
              
         <!-- Modal -->
-        <div x-show="open"
+        <div x-show="searchOpen"
              x-transition:enter="ease-out duration-300"
              x-transition:enter-start="opacity-0 scale-95"
              x-transition:enter-end="opacity-100 scale-100"
@@ -235,10 +238,14 @@
                 <div class="flex justify-center md:justify-start mb-6 md:mb-0">
                     <span class="text-xl font-bold text-brand-dark">PT Mada Wikri Tunggal</span>
                 </div>
-                <div class="mt-8 md:mt-0 text-center md:text-right">
+                <div class="mt-8 md:mt-0 text-center md:text-right flex flex-col items-center md:items-end">
                     <p class="text-base text-gray-400">
-                        &copy; {{ date('Y') }} Portal Standardisasi Internal. Dibuat khusus untuk tim *developer*.
+                        &copy; {{ date('Y') }} Portal Standardisasi Internal. Dibuat khusus untuk tim <span class="italic font-medium">developer</span>.
                     </p>
+                    <a href="{{ route('admin.dashboard') }}" class="mt-2 text-sm text-gray-400 hover:text-brand-dark dark:hover:text-white transition flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+                        Akses Admin Panel
+                    </a>
                 </div>
             </div>
         </div>
