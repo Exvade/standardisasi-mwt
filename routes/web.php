@@ -28,6 +28,7 @@ Route::prefix('guidelines')->name('public.guidelines.')->group(function () {
 });
 
 Route::get('/downloads', [DownloadController::class, 'index'])->name('public.downloads.index');
+Route::get('/downloads/all', [DownloadController::class, 'downloadAll'])->name('public.downloads.all');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');

@@ -17,6 +17,7 @@ class StandardizationSeeder extends Seeder
             ['file_name' => 'Panduan Error Handling (Markdown)', 'file_path' => 'assets/mwt-error-handling.md', 'version' => 'v1.0'],
             ['file_name' => 'Panduan Database (Markdown)', 'file_path' => 'assets/mwt-database.md', 'version' => 'v1.0'],
             ['file_name' => 'Panduan Git Workflow (Markdown)', 'file_path' => 'assets/mwt-git-workflow.md', 'version' => 'v1.0'],
+            ['file_name' => 'Standar Keamanan Aplikasi (Markdown)', 'file_path' => 'assets/mwt-security.md', 'version' => 'v1.0'],
         ];
 
         foreach ($assets as $asset) {
@@ -36,12 +37,14 @@ class StandardizationSeeder extends Seeder
         $errorContent = Storage::disk('public')->exists('assets/mwt-error-handling.md') ? Storage::disk('public')->get('assets/mwt-error-handling.md') : 'Konten Error';
         $dbContent = Storage::disk('public')->exists('assets/mwt-database.md') ? Storage::disk('public')->get('assets/mwt-database.md') : 'Konten DB';
         $gitContent = Storage::disk('public')->exists('assets/mwt-git-workflow.md') ? Storage::disk('public')->get('assets/mwt-git-workflow.md') : 'Konten Git';
+        $securityContent = Storage::disk('public')->exists('assets/mwt-security.md') ? Storage::disk('public')->get('assets/mwt-security.md') : 'Konten Keamanan';
 
         $guidelines = [
             ['title' => 'Panduan UI/UX & Frontend', 'type' => 'UI', 'content' => $uiContent, 'order' => 1],
             ['title' => 'Panduan Error Handling', 'type' => 'Lainnya', 'content' => $errorContent, 'order' => 2],
             ['title' => 'Panduan Struktur Database', 'type' => 'Database', 'content' => $dbContent, 'order' => 3],
             ['title' => 'Panduan Git Workflow', 'type' => 'Lainnya', 'content' => $gitContent, 'order' => 4],
+            ['title' => 'Standar Keamanan Aplikasi', 'type' => 'Keamanan', 'content' => $securityContent, 'order' => 5],
         ];
 
         foreach ($guidelines as $g) {

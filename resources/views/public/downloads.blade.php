@@ -11,6 +11,17 @@
         <p class="mt-4 text-lg text-gray-500 dark:text-gray-400 max-w-3xl">
             Unduh file <em class="italic font-medium">starter template</em>, ikon <em class="italic font-medium">branding</em>, maupun dokumen standardisasi fisik untuk mempermudah inisialisasi <em class="italic font-medium">project</em> Anda.
         </p>
+        
+        @if($assets->count() > 0)
+        <div class="mt-8">
+            <a href="{{ route('public.downloads.all') }}" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-brand-dark hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-light transition-all duration-300 transform hover:-translate-y-0.5">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+                Unduh Semua File (.zip)
+            </a>
+        </div>
+        @endif
     </div>
 
     @if($assets->count() > 0)
