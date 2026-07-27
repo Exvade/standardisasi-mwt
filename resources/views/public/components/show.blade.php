@@ -9,7 +9,7 @@
         <!-- Sidebar Navigation -->
         <aside class="w-full md:w-64 flex-shrink-0">
             <div class="sticky top-24 bg-white border border-gray-200 rounded-lg p-4 h-[calc(100vh-8rem)] overflow-y-auto">
-                <h3 class="font-bold text-gray-900 mb-4 pb-2 border-b">Daftar Komponen</h3>
+                <h3 class="font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">Daftar Komponen</h3>
                 
                 <nav class="space-y-6">
                     @foreach($categories as $category)
@@ -37,7 +37,7 @@
 
         <!-- Main Content area -->
         <main class="flex-1 bg-white border border-gray-200 rounded-lg p-4 sm:p-6 lg:p-10 shadow-sm min-w-0">
-            <div class="mb-8 border-b pb-4">
+            <div class="mb-8 border-b border-gray-100 pb-4">
                 <h1 class="text-3xl font-bold text-gray-900 break-words">{{ $component->title }}</h1>
                 @if($component->description)
                 <p class="mt-4 text-gray-600 text-lg">{{ $component->description }}</p>

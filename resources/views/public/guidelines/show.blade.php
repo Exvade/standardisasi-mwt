@@ -9,7 +9,7 @@
         <!-- Sidebar Navigation -->
         <aside class="w-full md:w-64 flex-shrink-0">
             <div class="sticky top-24 bg-white border border-gray-200 rounded-lg p-4 h-[calc(100vh-8rem)] overflow-y-auto">
-                <h3 class="font-bold text-gray-900 mb-4 pb-2 border-b">Daftar Panduan</h3>
+                <h3 class="font-bold text-gray-900 mb-4 pb-2 border-b border-gray-100">Daftar Panduan</h3>
                 
                 <nav class="space-y-2">
                     @foreach($allGuidelines as $g)
@@ -22,16 +22,21 @@
         </aside>
 
         <!-- Main Content area -->
-        <main class="flex-1 bg-white border border-gray-200 rounded-lg p-6 lg:p-12 shadow-sm">
-            <div class="mb-8 border-b pb-4">
-                <h1 class="text-3xl font-bold text-gray-900">{{ $guideline->title }}</h1>
+        <main class="flex-1 bg-white border border-gray-200 rounded-lg p-6 lg:p-12 shadow-sm min-w-0"
+              x-data="{ shown: false }"
+              x-init="setTimeout(() => shown = true, 100)">
+            
+            <div class="mb-8 border-b border-gray-100 pb-4 transform transition-all duration-700 ease-out"
+                 :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'">
+                <h1 class="text-3xl font-bold text-gray-900 break-words">{{ $guideline->title }}</h1>
                 <div class="mt-2 text-sm text-gray-500">
                     Kategori: <span class="font-medium text-brand-dark">{{ $guideline->type }}</span>
                 </div>
             </div>
 
             <!-- Markdown Content -->
-            <div class="markdown-body">
+            <div class="markdown-body transform transition-all duration-1000 delay-150 ease-out"
+                 :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
                 {!! $parsedContent !!}
             </div>
         </main>
