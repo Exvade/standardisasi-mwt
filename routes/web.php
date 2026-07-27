@@ -10,7 +10,10 @@ use App\Http\Controllers\ComponentDocController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\GuidelineDocController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/api/search', [SearchController::class, 'search'])->name('api.search');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

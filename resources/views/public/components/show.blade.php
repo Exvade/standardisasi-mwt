@@ -44,23 +44,49 @@
                 @endif
             </div>
 
-            <!-- Preview -->
-            <div class="mb-10">
-                <h2 class="text-xl font-semibold text-gray-800 mb-4">Preview</h2>
-                <div class="border border-gray-200 rounded-lg p-4 sm:p-6 bg-gray-50 flex items-center justify-center min-h-[200px] overflow-x-auto w-full">
-                    <div class="w-full flex justify-center">
-                        {!! $component->preview_html !!}
-                    </div>
-                </div>
-            </div>
+            <!-- Tabs with AlpineJS -->
+            <div x-data="{ activeTab: 'preview', copyToClipboard(text) { navigator.clipboard.writeText(text).then(() => { Swal.fire({ toast: true, position: 'top-end', showConfirmButton: false, timer: 3000, timerProgressBar: true, icon: 'success', title: 'Kode berhasil disalin!' }) }) } }">
+                <!-- Tab Navigation -->
+                <div class="border-b border-gray-200 mb-6">
+                    <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                        <button @click="activeTab = 'preview'" 
+                                :class="activeTab === 'preview' ? 'border-brand-light text-brand-dark' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'"
+                                class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            Live Preview
+                        </button>
 
-            <!-- Code -->
-            <div>
-                <div class="flex justify-between items-end mb-4">
-                    <h2 class="text-xl font-semibold text-gray-800">Source Code (HTML/Blade)</h2>
+                        <button @click="activeTab = 'code'" 
+                                :class="activeTab === 'code' ? 'border-brand-light text-brand-dark' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'"
+                                class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm transition-colors flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            Code (HTML/Blade)
+                        </button>
+                    </nav>
                 </div>
-                <div class="bg-gray-900 rounded-lg p-4 overflow-x-auto w-full max-w-full">
-                    <pre class="w-full"><code class="text-gray-100 font-mono text-xs sm:text-sm">{{ $component->code_snippet }}</code></pre>
+
+                <!-- Tab Panels -->
+                <div>
+                    <!-- Preview Panel -->
+                    <div x-show="activeTab === 'preview'" x-transition.opacity.duration.300ms class="mb-10">
+                        <div class="border border-gray-200 rounded-lg p-4 sm:p-6 bg-gray-50 flex items-center justify-center min-h-[300px] overflow-x-auto w-full relative">
+                            <div class="w-full flex justify-center">
+                                {!! $component->preview_html !!}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Code Panel -->
+                    <div x-show="activeTab === 'code'" x-transition.opacity.duration.300ms style="display: none;" class="relative">
+                        <div class="absolute top-4 right-4">
+                            <button @click="copyToClipboard($refs.codeContent.innerText)" class="p-2 bg-gray-800 text-gray-300 hover:text-white rounded-lg hover:bg-gray-700 transition-colors tooltip" title="Copy to Clipboard">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="bg-[#0d1117] rounded-lg p-6 overflow-x-auto w-full max-w-full shadow-lg border border-gray-800">
+                            <pre class="w-full m-0"><code x-ref="codeContent" class="text-gray-300 font-mono text-sm leading-relaxed">{{ $component->code_snippet }}</code></pre>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

@@ -3,62 +3,75 @@
 @section('title', $guideline->exists ? 'Edit Panduan' : 'Tambah Panduan')
 
 @section('content')
-<div class="mb-6 flex items-center">
-    <a href="{{ route('admin.guidelines.index') }}" class="text-gray-500 hover:text-gray-700 mr-4">
+<div class="mb-8 flex items-center gap-4">
+    <a href="{{ route('admin.guidelines.index') }}" class="p-2 text-gray-500 hover:text-brand-dark hover:bg-green-50 rounded-lg transition-colors tooltip" title="Kembali">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
     </a>
-    <h1 class="text-2xl font-bold text-gray-800">{{ $guideline->exists ? 'Edit Panduan' : 'Tambah Panduan' }}</h1>
+    <div>
+        <h1 class="text-3xl font-heading font-extrabold text-gray-900 tracking-tight">{{ $guideline->exists ? 'Edit Panduan' : 'Tambah Panduan Baru' }}</h1>
+        <p class="text-gray-500 mt-1">Tulis aturan dan standar pengembangan proyek di form ini.</p>
+    </div>
 </div>
 
-<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 max-w-4xl">
-    <form action="{{ $guideline->exists ? route('admin.guidelines.update', $guideline) : route('admin.guidelines.store') }}" method="POST">
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-4xl relative overflow-hidden">
+    <!-- Decorative accent -->
+    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-green-50 to-transparent rounded-bl-full pointer-events-none"></div>
+
+    <form action="{{ $guideline->exists ? route('admin.guidelines.update', $guideline) : route('admin.guidelines.store') }}" method="POST" class="relative z-10">
         @csrf
         @if($guideline->exists)
             @method('PUT')
         @endif
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div class="md:col-span-2">
-                <label for="title" class="block text-sm font-medium text-gray-700 mb-1">Judul Panduan</label>
-                <input type="text" name="title" id="title" value="{{ old('title', $guideline->title) }}" class="w-full border-gray-300 rounded-md shadow-sm focus:border-brand-light focus:ring focus:ring-brand-light focus:ring-opacity-50 border p-2" required>
-                @error('title') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                <label for="title" class="block text-sm font-bold text-gray-700 mb-2">Judul Panduan <span class="text-red-500">*</span></label>
+                <input type="text" name="title" id="title" value="{{ old('title', $guideline->title) }}" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl focus:ring-brand-light focus:border-brand-light block p-3 transition-colors duration-200 ease-in-out" required>
+                @error('title') <span class="text-red-500 text-sm mt-1 block font-medium">{{ $message }}</span> @enderror
             </div>
             
             <div>
-                <label for="type" class="block text-sm font-medium text-gray-700 mb-1">Tipe</label>
-                <select name="type" id="type" class="w-full border-gray-300 rounded-md shadow-sm focus:border-brand-light focus:ring focus:ring-brand-light focus:ring-opacity-50 border p-2" required>
-                    <option value="UI" {{ old('type', $guideline->type) === 'UI' ? 'selected' : '' }}>UI/UX</option>
+                <label for="type" class="block text-sm font-bold text-gray-700 mb-2">Tipe <span class="text-red-500">*</span></label>
+                <select name="type" id="type" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl focus:ring-brand-light focus:border-brand-light block p-3 transition-colors duration-200 ease-in-out" required>
+                    <option value="UI" {{ old('type', $guideline->type) === 'UI' ? 'selected' : '' }}>UI/UX & Frontend</option>
                     <option value="Database" {{ old('type', $guideline->type) === 'Database' ? 'selected' : '' }}>Database</option>
                     <option value="Lainnya" {{ old('type', $guideline->type) === 'Lainnya' ? 'selected' : '' }}>Lainnya</option>
                 </select>
-                @error('type') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                @error('type') <span class="text-red-500 text-sm mt-1 block font-medium">{{ $message }}</span> @enderror
             </div>
             
             <div>
-                <label for="status" class="block text-sm font-medium text-gray-700 mb-1">Status</label>
-                <select name="status" id="status" class="w-full border-gray-300 rounded-md shadow-sm focus:border-brand-light focus:ring focus:ring-brand-light focus:ring-opacity-50 border p-2" required>
-                    <option value="draft" {{ old('status', $guideline->status) === 'draft' ? 'selected' : '' }}>Draft</option>
-                    <option value="published" {{ old('status', $guideline->status) === 'published' ? 'selected' : '' }}>Published</option>
+                <label for="status" class="block text-sm font-bold text-gray-700 mb-2">Status <span class="text-red-500">*</span></label>
+                <select name="status" id="status" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl focus:ring-brand-light focus:border-brand-light block p-3 transition-colors duration-200 ease-in-out" required>
+                    <option value="draft" {{ old('status', $guideline->status) === 'draft' ? 'selected' : '' }}>Draft (Konsep)</option>
+                    <option value="published" {{ old('status', $guideline->status) === 'published' ? 'selected' : '' }}>Published (Publik)</option>
                 </select>
-                @error('status') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+                @error('status') <span class="text-red-500 text-sm mt-1 block font-medium">{{ $message }}</span> @enderror
             </div>
         </div>
 
-        <div class="mb-4">
-            <label for="order" class="block text-sm font-medium text-gray-700 mb-1">Urutan (Order)</label>
-            <input type="number" name="order" id="order" value="{{ old('order', $guideline->order ?? 0) }}" class="w-full border-gray-300 rounded-md shadow-sm focus:border-brand-light focus:ring focus:ring-brand-light focus:ring-opacity-50 border p-2 md:w-1/2">
-            @error('order') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+        <div class="mb-6">
+            <label for="order" class="block text-sm font-bold text-gray-700 mb-2">Urutan (Order)</label>
+            <input type="number" name="order" id="order" value="{{ old('order', $guideline->order ?? 0) }}" class="w-full md:w-1/2 bg-gray-50 border border-gray-200 text-gray-900 rounded-xl focus:ring-brand-light focus:border-brand-light block p-3 transition-colors duration-200 ease-in-out">
+            @error('order') <span class="text-red-500 text-sm mt-1 block font-medium">{{ $message }}</span> @enderror
         </div>
 
         <div class="mb-6">
-            <label for="content" class="block text-sm font-medium text-gray-700 mb-1">Konten (Markdown Mendukung)</label>
-            <textarea name="content" id="content" rows="12" class="w-full font-mono text-sm border-gray-300 rounded-md shadow-sm focus:border-brand-light focus:ring focus:ring-brand-light focus:ring-opacity-50 border p-2 bg-gray-50" required>{{ old('content', $guideline->content) }}</textarea>
-            <p class="text-xs text-gray-500 mt-1">Gunakan format Markdown untuk mengatur teks tebal, miring, list, dan link.</p>
-            @error('content') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
+            <label for="content" class="block text-sm font-bold text-gray-700 mb-2">Konten Markdown <span class="text-red-500">*</span></label>
+            <textarea name="content" id="content" rows="12" class="w-full font-mono text-sm border-gray-200 bg-[#0d1117] text-gray-300 rounded-xl focus:ring-brand-light focus:border-brand-light block p-4 transition-colors duration-200 ease-in-out shadow-inner" required>{{ old('content', $guideline->content) }}</textarea>
+            <p class="text-sm text-gray-500 mt-2 flex items-center">
+                <svg class="w-4 h-4 mr-1 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Mendukung Markdown (Gunakan # untuk heading, ** untuk bold, * untuk italic, dll).
+            </p>
+            @error('content') <span class="text-red-500 text-sm mt-1 block font-medium">{{ $message }}</span> @enderror
         </div>
 
-        <div class="flex justify-end">
-            <button type="submit" class="px-4 py-2 bg-brand-dark text-white rounded hover:bg-green-800 transition">
+        <div class="mt-8 pt-6 border-t border-gray-100 flex justify-end gap-3">
+            <a href="{{ route('admin.guidelines.index') }}" class="px-5 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 focus:ring-4 focus:outline-none focus:ring-gray-100 transition-all">
+                Batal
+            </a>
+            <button type="submit" class="px-5 py-2.5 text-sm font-medium text-white bg-brand-dark rounded-xl hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 transition-all shadow-sm flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                 Simpan Panduan
             </button>
         </div>
