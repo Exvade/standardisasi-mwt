@@ -48,19 +48,19 @@
                 <!-- Logo & Nav Desktop -->
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <a href="{{ route('home') }}" class="text-2xl font-bold text-brand-dark tracking-tighter flex items-center gap-2">
+                        <a href="{{ route('home') }}" class="text-2xl font-bold text-brand-dark dark:text-white tracking-tighter flex items-center gap-2">
                             <svg class="w-8 h-8 text-brand-light" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                             MWT Portal
                         </a>
                     </div>
                     <nav class="hidden sm:ml-8 sm:flex sm:space-x-8">
-                        <a href="{{ route('public.components.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 {{ request()->routeIs('public.components.*') ? 'border-brand-light text-brand-dark font-semibold' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }} text-sm font-medium">
+                        <a href="{{ route('public.components.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 {{ request()->routeIs('public.components.*') ? 'border-brand-light text-brand-dark dark:text-white font-semibold' : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600' }} text-sm font-medium transition-colors">
                             Komponen UI
                         </a>
-                        <a href="{{ route('public.guidelines.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 {{ request()->routeIs('public.guidelines.*') ? 'border-brand-light text-brand-dark font-semibold' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }} text-sm font-medium">
+                        <a href="{{ route('public.guidelines.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 {{ request()->routeIs('public.guidelines.*') ? 'border-brand-light text-brand-dark dark:text-white font-semibold' : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600' }} text-sm font-medium transition-colors">
                             Panduan
                         </a>
-                        <a href="{{ route('public.downloads.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 {{ request()->routeIs('public.downloads.*') ? 'border-brand-light text-brand-dark font-semibold' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300' }} text-sm font-medium">
+                        <a href="{{ route('public.downloads.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 {{ request()->routeIs('public.downloads.*') ? 'border-brand-light text-brand-dark dark:text-white font-semibold' : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600' }} text-sm font-medium transition-colors">
                             Aset Unduhan
                         </a>
                     </nav>
@@ -99,9 +99,9 @@
         <!-- Mobile Menu -->
         <div x-show="mobileMenuOpen" class="sm:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700" style="display: none;">
             <div class="pt-2 pb-3 space-y-1">
-                <a href="{{ route('public.components.index') }}" class="block pl-3 pr-4 py-2 border-l-4 {{ request()->routeIs('public.components.*') ? 'border-brand-light text-brand-dark dark:text-brand-light bg-green-50 dark:bg-gray-700' : 'border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300' }} text-base font-medium">Komponen UI</a>
-                <a href="{{ route('public.guidelines.index') }}" class="block pl-3 pr-4 py-2 border-l-4 {{ request()->routeIs('public.guidelines.*') ? 'border-brand-light text-brand-dark dark:text-brand-light bg-green-50 dark:bg-gray-700' : 'border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300' }} text-base font-medium">Panduan</a>
-                <a href="{{ route('public.downloads.index') }}" class="block pl-3 pr-4 py-2 border-l-4 {{ request()->routeIs('public.downloads.*') ? 'border-brand-light text-brand-dark dark:text-brand-light bg-green-50 dark:bg-gray-700' : 'border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300' }} text-base font-medium">Aset Unduhan</a>
+                <a href="{{ route('public.components.index') }}" class="block pl-3 pr-4 py-2 border-l-4 {{ request()->routeIs('public.components.*') ? 'border-brand-light text-brand-dark dark:text-white bg-green-50 dark:bg-gray-800' : 'border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-700' }} text-base font-medium">Komponen UI</a>
+                <a href="{{ route('public.guidelines.index') }}" class="block pl-3 pr-4 py-2 border-l-4 {{ request()->routeIs('public.guidelines.*') ? 'border-brand-light text-brand-dark dark:text-white bg-green-50 dark:bg-gray-800' : 'border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-700' }} text-base font-medium">Panduan</a>
+                <a href="{{ route('public.downloads.index') }}" class="block pl-3 pr-4 py-2 border-l-4 {{ request()->routeIs('public.downloads.*') ? 'border-brand-light text-brand-dark dark:text-white bg-green-50 dark:bg-gray-800' : 'border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-700' }} text-base font-medium">Aset Unduhan</a>
                 
                 <!-- Search & Theme Mobile -->
                 <button @click="searchOpen = true; mobileMenuOpen = false" class="w-full text-left block pl-3 pr-4 py-2 border-l-4 border-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 text-base font-medium">
@@ -236,16 +236,12 @@
         <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
             <div class="md:flex md:items-center md:justify-between">
                 <div class="flex justify-center md:justify-start mb-6 md:mb-0">
-                    <span class="text-xl font-bold text-brand-dark">PT Mada Wikri Tunggal</span>
+                    <span class="text-xl font-bold text-brand-dark dark:text-white">PT Mada Wikri Tunggal</span>
                 </div>
                 <div class="mt-8 md:mt-0 text-center md:text-right flex flex-col items-center md:items-end">
                     <p class="text-base text-gray-400">
                         &copy; {{ date('Y') }} Portal Standardisasi Internal. Dibuat khusus untuk tim <span class="italic font-medium">developer</span>.
                     </p>
-                    <a href="{{ route('admin.dashboard') }}" class="mt-2 text-sm text-gray-400 hover:text-brand-dark dark:hover:text-white transition flex items-center">
-                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
-                        Akses Admin Panel
-                    </a>
                 </div>
             </div>
         </div>

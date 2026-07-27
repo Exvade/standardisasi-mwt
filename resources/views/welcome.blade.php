@@ -155,69 +155,138 @@
 </div>
 
 <!-- Highlight Section: Komponen UI -->
-<div class="py-24 bg-white dark:bg-gray-800 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-            <div>
-                <h3 class="text-3xl font-heading font-bold text-gray-900 dark:text-white mb-6">Pustaka UI yang Konsisten</h3>
-                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                    Jangan buang waktu mendesain dari awal. Kami telah mengumpulkan komponen-komponen antarmuka yang sudah disesuaikan dengan warna identitas <span class="italic font-medium">Brand</span> PT Mada Wikri Tunggal.
-                </p>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center text-gray-700 dark:text-gray-300">
-                        <svg class="w-6 h-6 text-brand-light mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        Responsif di semua perangkat (Desktop, Tablet, Mobile)
-                    </li>
-                    <li class="flex items-center text-gray-700 dark:text-gray-300">
-                        <svg class="w-6 h-6 text-brand-light mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        Menggunakan sintaks Tailwind CSS V4 modern
-                    </li>
-                    <li class="flex items-center text-gray-700 dark:text-gray-300">
-                        <svg class="w-6 h-6 text-brand-light mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        Dilengkapi interaksi mulus dengan Alpine.js
-                    </li>
-                </ul>
-                <a href="{{ route('public.components.index') }}" class="inline-flex items-center text-brand-dark dark:text-brand-light font-bold hover:text-green-700 dark:hover:text-white text-lg group transition-colors">
-                    Lihat Katalog Komponen
-                    <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
-            </div>
+<div class="py-24 bg-white dark:bg-gray-800 overflow-hidden relative">
+    <!-- Background Decor -->
+    <div class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-green-50 to-transparent dark:from-green-900/10 dark:to-transparent"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-brand-light font-semibold tracking-wide uppercase text-sm mb-3">Pustaka Komponen</h2>
+            <h3 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 dark:text-white mb-6">Antarmuka yang Indah & Konsisten</h3>
+            <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                Ribuan jam telah dihemat dengan tidak mendesain ulang elemen yang sama. Kami telah merangkai komponen-komponen siap pakai yang estetis, fungsional, dan sepenuhnya mematuhi identitas <span class="italic font-medium">Brand</span> PT MWT.
+            </p>
+        </div>
+
+        <!-- Showcase Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             
-            <div class="mt-12 lg:mt-0 relative">
-                <!-- Floating Elements decoration -->
-                <div class="absolute -top-10 -right-10 w-40 h-40 bg-green-100 rounded-full mix-blend-multiply opacity-50 blur-2xl"></div>
-                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-light rounded-full mix-blend-multiply opacity-30 blur-2xl"></div>
-                
-                <div class="bg-brand-surface dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 p-8 shadow-xl relative z-10">
-                    <div class="space-y-6">
-                        <!-- Simulated UI component -->
-                        <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
-                            <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-                                <div>
-                                    <div class="h-4 w-24 bg-gray-300 dark:bg-gray-600 rounded mb-2"></div>
-                                    <div class="h-3 w-32 bg-gray-200 dark:bg-gray-700 rounded"></div>
-                                </div>
-                            </div>
-                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900/40 text-brand-dark dark:text-brand-light">Aktif</span>
+            <!-- Column 1: Stats & Alerts -->
+            <div class="space-y-8">
+                <!-- Stat Card -->
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 transform transition-transform hover:-translate-y-1 hover:shadow-2xl duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <h4 class="text-sm font-semibold text-gray-500 dark:text-gray-400">Total Pengguna</h4>
+                        <span class="flex items-center text-xs font-bold text-green-600 bg-green-100 dark:bg-green-900/30 dark:text-green-400 px-2 py-1 rounded-full">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                            12.5%
+                        </span>
+                    </div>
+                    <div class="text-3xl font-extrabold text-gray-900 dark:text-white font-heading">8,429</div>
+                    <div class="mt-4 w-full bg-gray-100 dark:bg-gray-800 rounded-full h-1.5">
+                        <div class="bg-brand-light h-1.5 rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+
+                <!-- Alert/Notification -->
+                <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded-r-xl shadow-md">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <svg class="h-5 w-5 text-blue-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" /></svg>
                         </div>
-                        <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700">
-                            <div class="flex items-center gap-4">
-                                <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700"></div>
-                                <div>
-                                    <div class="h-4 w-24 bg-gray-300 dark:bg-gray-600 rounded mb-2"></div>
-                                    <div class="h-3 w-32 bg-gray-200 dark:bg-gray-700 rounded"></div>
-                                </div>
-                            </div>
-                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-400">Cuti</span>
-                        </div>
-                        <div class="pt-4 flex gap-3">
-                            <button class="flex-1 py-2 bg-brand-dark rounded-md text-white font-medium text-sm">Simpan</button>
-                            <button class="flex-1 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md text-gray-700 dark:text-gray-300 font-medium text-sm">Batal</button>
+                        <div class="ml-3">
+                            <h3 class="text-sm font-medium text-blue-800 dark:text-blue-300">Pembaruan Sistem</h3>
+                            <p class="text-sm text-blue-700 dark:text-blue-400 mt-1">Versi terbaru portal telah dirilis dengan fitur dark mode.</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Column 2: Data List (Center - Larger) -->
+            <div class="bg-brand-surface dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-2xl relative lg:col-span-1 transform transition-transform hover:-translate-y-1 hover:shadow-2xl duration-300">
+                <div class="absolute -top-6 -right-6 w-24 h-24 bg-brand-light rounded-full mix-blend-multiply opacity-40 blur-xl"></div>
+                <div class="p-6 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center relative z-10">
+                    <h4 class="font-bold text-gray-900 dark:text-white">Data Karyawan</h4>
+                    <button class="p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path></svg></button>
+                </div>
+                <div class="p-0">
+                    <!-- List Item 1 -->
+                    <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-900 border-b border-gray-50 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-dark to-brand-light flex items-center justify-center text-white font-bold text-sm shadow-inner">AS</div>
+                            <div>
+                                <div class="text-sm font-bold text-gray-900 dark:text-white">Ahmad Santoso</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">IT Developer</div>
+                            </div>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 ring-1 ring-green-600/20">Aktif</span>
+                    </div>
+                    <!-- List Item 2 -->
+                    <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-900 border-b border-gray-50 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-600 dark:text-gray-300 font-bold text-sm shadow-inner">BW</div>
+                            <div>
+                                <div class="text-sm font-bold text-gray-900 dark:text-white">Budi Wibowo</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">HR Manager</div>
+                            </div>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-400 ring-1 ring-red-600/20">Cuti</span>
+                    </div>
+                    <!-- List Item 3 -->
+                    <div class="flex items-center justify-between p-4 bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors rounded-b-2xl">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-blue-400 flex items-center justify-center text-white font-bold text-sm shadow-inner">CW</div>
+                            <div>
+                                <div class="text-sm font-bold text-gray-900 dark:text-white">Citra Wijaya</div>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">Finance</div>
+                            </div>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-400 ring-1 ring-green-600/20">Aktif</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Forms & Buttons -->
+            <div class="space-y-8">
+                <!-- Form Group -->
+                <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 transform transition-transform hover:-translate-y-1 hover:shadow-2xl duration-300">
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Alamat Email</label>
+                    <div class="relative rounded-md shadow-sm mb-4">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path></svg>
+                        </div>
+                        <input type="email" class="focus:ring-brand-light focus:border-brand-light block w-full pl-10 sm:text-sm border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-md py-2.5 transition-colors" placeholder="nama@madawikri.com" value="developer@madawikri.com">
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <label class="flex items-center">
+                            <input type="checkbox" checked class="rounded border-gray-300 text-brand-dark focus:ring-brand-light dark:border-gray-600 dark:bg-gray-700 dark:checked:bg-brand-dark">
+                            <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">Ingat saya</span>
+                        </label>
+                        <!-- Toggle Switch -->
+                        <button type="button" class="bg-brand-dark relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-light" role="switch" aria-checked="true">
+                            <span aria-hidden="true" class="translate-x-5 pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"></span>
+                        </button>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <button type="button" class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-gray-300 dark:border-gray-600 shadow-sm text-sm font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-light transition-colors">
+                            Batal
+                        </button>
+                        <button type="button" class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-brand-dark hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-light transition-colors">
+                            Simpan
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="mt-16 text-center">
+            <a href="{{ route('public.components.index') }}" class="inline-flex items-center text-brand-dark dark:text-brand-light font-bold hover:text-green-700 dark:hover:text-white text-lg group transition-colors px-6 py-3 rounded-full bg-green-50 dark:bg-gray-900 border border-green-100 dark:border-gray-700 hover:border-green-200 dark:hover:border-gray-600 shadow-sm">
+                Jelajahi Katalog Komponen Lengkap
+                <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
         </div>
     </div>
 </div>
