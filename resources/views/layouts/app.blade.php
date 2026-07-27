@@ -50,7 +50,8 @@
                     <div class="flex-shrink-0 flex items-center">
                         <a href="{{ route('home') }}" class="flex items-center gap-2">
                             <!-- Placeholder Logo Landscape -->
-                            <img src="{{ asset('storage/assets/logo-landscape.png') }}" alt="MWT Portal" class="h-8 w-auto">
+                            <img src="{{ asset('storage/assets/logo-landscape.png') }}" alt="MWT Portal" class="h-8 w-auto dark:hidden block">
+                            <img src="{{ asset('storage/assets/logo-landscape-light.png') }}" alt="MWT Portal" class="h-8 w-auto hidden dark:block">
                             <!-- Jika belum ada gambar logo, ganti dengan text ini:
                             <span class="text-2xl font-bold text-brand-dark dark:text-white tracking-tighter">MWT Portal</span>
                             -->
@@ -241,7 +242,8 @@
                 <div class="flex justify-center md:justify-start mb-6 md:mb-0">
                     <a href="{{ route('home') }}">
                         <!-- Placeholder Logo Landscape Footer -->
-                        <img src="{{ asset('storage/assets/logo-landscape.png') }}" alt="PT Mada Wikri Tunggal" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity">
+                        <img src="{{ asset('storage/assets/logo-landscape.png') }}" alt="PT Mada Wikri Tunggal" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity dark:hidden block">
+                        <img src="{{ asset('storage/assets/logo-landscape-light.png') }}" alt="PT Mada Wikri Tunggal" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity hidden dark:block">
                     </a>
                 </div>
                 <div class="mt-8 md:mt-0 text-center md:text-right flex flex-col items-center md:items-end">

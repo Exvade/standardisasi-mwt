@@ -38,3 +38,35 @@
 .markdown-body th { @apply border-b-2 border-gray-200 dark:border-gray-700 py-3 px-4 font-semibold text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-800; }
 .markdown-body td { @apply border-b border-gray-100 dark:border-gray-800 py-3 px-4 text-gray-700 dark:text-gray-300; }
 .markdown-body tr:last-child td { @apply border-b-0; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Dark Mode Scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+/* Firefox Scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+.dark * {
+    scrollbar-color: #334155 transparent;
+}
