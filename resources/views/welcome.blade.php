@@ -74,25 +74,25 @@
 <div class="bg-white dark:bg-gray-800 py-12 border-b border-gray-100 dark:border-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <p class="text-center text-sm font-semibold uppercase text-gray-500 dark:text-gray-400 tracking-wider mb-8">Didukung oleh Teknologi Modern</p>
-        <div class="flex justify-center items-center gap-8 md:gap-16 flex-wrap opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="flex justify-center items-center gap-8 md:gap-16 flex-wrap transition-all duration-500">
             <!-- Tailwind Logo -->
-            <div class="flex items-center gap-2">
-                <svg class="w-8 h-8 text-[#06B6D4]" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg>
+            <div class="flex items-center gap-2 group cursor-default">
+                <svg class="w-8 h-8 text-[#38B2AC] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg>
                 <span class="font-bold text-xl text-gray-800 dark:text-gray-200 tracking-tight">Tailwind</span>
             </div>
             <!-- Laravel Logo -->
-            <div class="flex items-center gap-2">
-                <svg class="w-8 h-8 text-[#FF2D20]" viewBox="0 0 24 24" fill="currentColor"><path d="M22.756 12L21.365 9.176l-8.62-5.467c-.45-.284-1.04-.284-1.49 0l-8.62 5.467L1.244 12l1.39 2.824 8.62 5.467c.45.284 1.04.284 1.49 0l8.62-5.467L22.756 12zm-4.708 0l-1.39 2.824-4.658 2.955-4.658-2.955-1.39-2.824 1.39-2.824 4.658-2.955 4.658 2.955 1.39 2.824z"/></svg>
+            <div class="flex items-center gap-2 group cursor-default">
+                <svg class="w-8 h-8 text-[#FF2D20] group-hover:scale-110 transition-transform" viewBox="0 0 50 52" fill="currentColor"><path d="M49.6 15.3l-22.3-13c-.6-.4-1.5-.4-2.1 0l-23 13c-.6.3-1 1-1 1.7v24.6c0 .7.4 1.4 1 1.7l23 13c.6.4 1.5.4 2.1 0l22.3-13c.6-.3 1-1 1-1.7V17c0-.7-.4-1.4-1-1.7zm-23.3-9l17 9.8-17 10-17.6-10 17.6-9.8zm-19.7 12.3l16.7 9.5v19.7l-16.7-9.7V18.6zm22.4 29.2v-19.7l16.7-9.5v19.7l-16.7 9.5z"/></svg>
                 <span class="font-bold text-xl text-gray-800 dark:text-gray-200 tracking-tight">Laravel</span>
             </div>
             <!-- Alpine Logo -->
-            <div class="flex items-center gap-2">
-                <svg class="w-8 h-8 text-[#8BC0D0]" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12l-5.72 5.746-5.724-5.742 5.724-5.75L24 12zM5.72 6.254L0 12l5.72 5.746h11.44l-5.72-5.746 5.72-5.75H5.72z"/></svg>
+            <div class="flex items-center gap-2 group cursor-default">
+                <svg class="w-8 h-8 text-[#8BC0D0] group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor"><path d="m24 12-5.72 5.746-5.724-5.741 5.724-5.75L24 12zM5.72 6.254 0 12l5.72 5.746h11.44L5.72 6.254z"/></svg>
                 <span class="font-bold text-xl text-gray-800 dark:text-gray-200 tracking-tight">Alpine.js</span>
             </div>
-            <!-- SQLite / DB -->
-            <div class="flex items-center gap-2">
-                <svg class="w-8 h-8 text-[#003B57] dark:text-[#38bdf8]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 4.02 2 6.5s4.48 4.5 10 4.5 10-2.02 10-4.5S17.52 2 12 2zm0 6.5c-4.42 0-8-1.57-8-3.5S7.58 1.5 12 1.5s8 1.57 8 3.5-3.58 3.5-8 3.5zm0 13c-5.52 0-10-2.02-10-4.5V11c0 2.48 4.48 4.5 10 4.5s10-2.02 10-4.5V17c0 2.48-4.48 4.5-10 4.5zm-8-4.5c0 1.93 3.58 3.5 8 3.5s8-1.57 8-3.5v-2.08c-2.31 1.25-5.12 1.98-8 1.98s-5.69-.73-8-1.98V17z"/></svg>
+            <!-- Database -->
+            <div class="flex items-center gap-2 group cursor-default">
+                <svg class="w-8 h-8 text-gray-600 dark:text-gray-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
                 <span class="font-bold text-xl text-gray-800 dark:text-gray-200 tracking-tight">Database</span>
             </div>
         </div>
