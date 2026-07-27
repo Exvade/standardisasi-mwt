@@ -54,10 +54,14 @@
             <div class="w-full max-w-md">
                 
                 <div class="lg:hidden mb-10 text-center flex flex-col items-center">
+                    <!-- Placeholder Logo Landscape -->
+                    <img src="{{ asset('storage/assets/logo-landscape.png') }}" alt="Portal MWT" class="h-10 w-auto mb-4">
+                    <!-- Jika belum ada gambar logo, ganti dengan text ini:
                     <div class="bg-brand-dark p-3 rounded-xl mb-4 inline-block">
                         <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     </div>
                     <h1 class="text-2xl font-heading font-bold text-gray-900">Portal MWT</h1>
+                    -->
                 </div>
 
                 <div class="mb-10 text-center lg:text-left">

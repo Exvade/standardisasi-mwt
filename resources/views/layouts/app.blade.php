@@ -48,9 +48,12 @@
                 <!-- Logo & Nav Desktop -->
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <a href="{{ route('home') }}" class="text-2xl font-bold text-brand-dark dark:text-white tracking-tighter flex items-center gap-2">
-                            <svg class="w-8 h-8 text-brand-light" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                            MWT Portal
+                        <a href="{{ route('home') }}" class="flex items-center gap-2">
+                            <!-- Placeholder Logo Landscape -->
+                            <img src="{{ asset('storage/assets/logo-landscape.png') }}" alt="MWT Portal" class="h-8 w-auto">
+                            <!-- Jika belum ada gambar logo, ganti dengan text ini:
+                            <span class="text-2xl font-bold text-brand-dark dark:text-white tracking-tighter">MWT Portal</span>
+                            -->
                         </a>
                     </div>
                     <nav class="hidden sm:ml-8 sm:flex sm:space-x-8">
@@ -236,7 +239,10 @@
         <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
             <div class="md:flex md:items-center md:justify-between">
                 <div class="flex justify-center md:justify-start mb-6 md:mb-0">
-                    <span class="text-xl font-bold text-brand-dark dark:text-white">PT Mada Wikri Tunggal</span>
+                    <a href="{{ route('home') }}">
+                        <!-- Placeholder Logo Landscape Footer -->
+                        <img src="{{ asset('storage/assets/logo-landscape.png') }}" alt="PT Mada Wikri Tunggal" class="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity">
+                    </a>
                 </div>
                 <div class="mt-8 md:mt-0 text-center md:text-right flex flex-col items-center md:items-end">
                     <p class="text-base text-gray-400">

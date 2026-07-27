@@ -14,11 +14,8 @@
         <!-- Sidebar (Desktop & Mobile) -->
         <aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'" class="fixed inset-y-0 left-0 z-50 w-72 bg-[#0a2a17] text-white transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:inset-0 flex flex-col shadow-2xl lg:shadow-none">
             <div class="flex items-center justify-center h-20 border-b border-white/10 bg-[#082212]">
-                <div class="font-heading font-extrabold text-2xl tracking-tight text-white flex items-center gap-2">
-                    <div class="w-8 h-8 bg-brand-light rounded-lg flex items-center justify-center text-brand-dark">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    MWT Admin
+                <div class="flex items-center justify-center">
+                    <img src="{{ asset('storage/assets/logo-landscape-light.png') }}" alt="MWT Admin" class="h-8 w-auto">
                 </div>
             </div>
             
