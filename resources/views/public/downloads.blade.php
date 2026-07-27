@@ -9,7 +9,7 @@
             Aset & Starter Kit
         </h1>
         <p class="mt-4 text-lg text-gray-500 max-w-3xl">
-            Unduh file *starter template*, ikon *branding*, maupun dokumen standardisasi fisik untuk mempermudah inisialisasi *project* Anda.
+            Unduh file <em class="italic font-medium">starter template</em>, ikon <em class="italic font-medium">branding</em>, maupun dokumen standardisasi fisik untuk mempermudah inisialisasi <em class="italic font-medium">project</em> Anda.
         </p>
     </div>
 
