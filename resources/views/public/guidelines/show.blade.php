@@ -1,0 +1,41 @@
+@extends('layouts.app')
+
+@section('title', $guideline->title)
+
+@section('content')
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex flex-col md:flex-row gap-8">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-64 flex-shrink-0">
+            <div class="sticky top-24 bg-white border border-gray-200 rounded-lg p-4 h-[calc(100vh-8rem)] overflow-y-auto">
+                <h3 class="font-bold text-gray-900 mb-4 pb-2 border-b">Daftar Panduan</h3>
+                
+                <nav class="space-y-2">
+                    @foreach($allGuidelines as $g)
+                    <a href="{{ route('public.guidelines.show', $g->id) }}" class="block text-sm py-2 px-3 rounded {{ $g->id === $guideline->id ? 'bg-brand-light text-white font-medium' : 'text-gray-600 hover:bg-gray-50' }}">
+                        {{ $g->title }}
+                    </a>
+                    @endforeach
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content area -->
+        <main class="flex-1 bg-white border border-gray-200 rounded-lg p-6 lg:p-12 shadow-sm">
+            <div class="mb-8 border-b pb-4">
+                <h1 class="text-3xl font-bold text-gray-900">{{ $guideline->title }}</h1>
+                <div class="mt-2 text-sm text-gray-500">
+                    Kategori: <span class="font-medium text-brand-dark">{{ $guideline->type }}</span>
+                </div>
+            </div>
+
+            <!-- Markdown Content -->
+            <div class="markdown-body">
+                {!! $parsedContent !!}
+            </div>
+        </main>
+        
+    </div>
+</div>
+@endsection

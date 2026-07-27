@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class DownloadableAsset extends Model
 {
-    //
+    protected $guarded = [];
 }

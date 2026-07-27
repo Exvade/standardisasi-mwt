@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Guideline extends Model
 {
-    //
+    protected $guarded = [];
 }
