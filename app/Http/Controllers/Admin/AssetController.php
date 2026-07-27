@@ -27,7 +27,7 @@ class AssetController extends Controller
             'file_name' => 'required|string|max:255',
             'version' => 'nullable|string|max:50',
             'status' => 'required|in:draft,published',
-            'file' => 'required|file|max:10240', // max 10MB
+            'file' => 'required|file|mimes:md,pdf,zip,png,jpg,jpeg,svg,txt,docx,xlsx|max:10240', // max 10MB
         ]);
 
         $path = $request->file('file')->store('assets', 'public');
@@ -50,7 +50,7 @@ class AssetController extends Controller
             'file_name' => 'required|string|max:255',
             'version' => 'nullable|string|max:50',
             'status' => 'required|in:draft,published',
-            'file' => 'nullable|file|max:10240',
+            'file' => 'nullable|file|mimes:md,pdf,zip,png,jpg,jpeg,svg,txt,docx,xlsx|max:10240',
         ]);
 
         if ($request->hasFile('file')) {
