@@ -30,9 +30,9 @@
 .markdown-body ol { @apply list-decimal list-inside ml-2 mb-6 space-y-2; }
 .markdown-body a { @apply text-brand-light font-medium hover:text-green-700 dark:hover:text-green-400 underline decoration-green-200 dark:decoration-green-900 underline-offset-4 transition-colors; }
 .markdown-body blockquote { @apply border-l-4 border-brand-light pl-6 py-3 mb-8 italic text-gray-600 dark:text-gray-400 bg-gradient-to-r from-green-50 to-transparent dark:from-green-900/20 dark:to-transparent rounded-r-xl shadow-sm; }
-.markdown-body pre { @apply bg-[#0d1117] text-gray-300 p-5 rounded-xl mb-8 overflow-x-auto text-[0.9rem] font-mono shadow-lg border border-gray-800 leading-normal; }
+.markdown-body pre { @apply bg-[#282c34] text-gray-300 p-5 rounded-xl mb-8 whitespace-pre-wrap break-words text-[0.9rem] font-mono shadow-lg border border-gray-800 leading-normal; }
 .markdown-body code { @apply bg-gray-100 dark:bg-gray-800 text-brand-dark dark:text-brand-light px-1.5 py-0.5 rounded-md text-[0.9rem] font-mono; }
-.markdown-body pre code { @apply bg-transparent text-gray-300 p-0 text-[0.9rem] border-none shadow-none; }
+.markdown-body pre code { @apply bg-transparent text-gray-300 p-0 text-[0.9rem] border-none shadow-none whitespace-pre-wrap break-words; }
 .markdown-body strong { @apply font-bold text-gray-900 dark:text-gray-100; }
 .markdown-body table { @apply w-full text-left border-collapse mb-8; }
 .markdown-body th { @apply border-b-2 border-gray-200 dark:border-gray-700 py-3 px-4 font-semibold text-gray-900 dark:text-gray-100 bg-gray-50 dark:bg-gray-800; }

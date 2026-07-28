@@ -68,7 +68,7 @@
                 <!-- Tab Panels -->
                 <div>
                     <!-- Preview Panel -->
-                    <div x-show="activeTab === 'preview'" x-transition.opacity.duration.300ms class="mb-10">
+                    <div x-show="activeTab === 'preview'" class="mb-10">
                         <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-4 sm:p-6 bg-gray-50 dark:bg-gray-900 flex items-center justify-center min-h-[300px] overflow-x-auto w-full relative">
                             <div class="w-full flex justify-center">
                                 {!! $component->preview_html !!}
@@ -77,14 +77,14 @@
                     </div>
 
                     <!-- Code Panel -->
-                    <div x-show="activeTab === 'code'" x-transition.opacity.duration.300ms style="display: none;" class="relative">
+                    <div x-show="activeTab === 'code'" style="display: none;" class="relative">
                         <div class="absolute top-4 right-4">
                             <button @click="copyToClipboard($refs.codeContent.innerText)" class="p-2 bg-gray-800 text-gray-300 hover:text-white rounded-lg hover:bg-gray-700 transition-colors tooltip" title="Copy to Clipboard">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                             </button>
                         </div>
-                        <div class="bg-[#0d1117] rounded-lg p-6 overflow-x-auto w-full max-w-full shadow-lg border border-gray-800">
-                            <pre class="w-full m-0"><code x-ref="codeContent" class="text-gray-300 font-mono text-sm leading-relaxed">{{ $component->code_snippet }}</code></pre>
+                        <div class="bg-[#282c34] rounded-lg p-6 w-full max-w-full shadow-lg border border-gray-800">
+                            <pre class="w-full m-0 whitespace-pre-wrap break-words"><code x-ref="codeContent" class="language-html text-sm leading-relaxed">{{ $component->code_snippet }}</code></pre>
                         </div>
                     </div>
                 </div>
