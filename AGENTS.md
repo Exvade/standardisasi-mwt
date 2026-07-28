@@ -1,4 +1,4 @@
-<laravel-boost-guidelines>
+p<laravel-boost-guidelines>
 === foundation rules ===
 
 # Laravel Boost Guidelines

@@ -41,8 +41,8 @@
                     </p>
                     <div class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
                         <button
-                            onclick="navigator.clipboard.writeText('git clone https://github.com/PT-MWT/starter-kit.git'); Swal.fire({icon: 'success', title: 'Berhasil', text: 'Perintah clone berhasil disalin!', toast: true, position: 'top-end', showConfirmButton: false, timer: 3000, timerProgressBar: true});"
-                            class="group flex items-center justify-center px-6 py-3.5 text-sm font-semibold rounded-full text-white bg-brand-dark hover:bg-green-900 shadow-lg shadow-green-900/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-light">
+                            onclick="navigator.clipboard.writeText('git clone https://github.com/PT-MWT/starter-kit.git [nama-project]'); Swal.fire({icon: 'success', title: 'Berhasil', text: 'Perintah clone berhasil disalin!', toast: true, position: 'top-end', showConfirmButton: false, timer: 3000, timerProgressBar: true});"
+                            class="group flex items-center justify-center px-6 py-3.5 text-sm font-semibold rounded-full text-white bg-brand-dark hover:bg-green-900 shadow-lg shadow-green-900/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-light">
                             <svg class="w-5 h-5 mr-2.5 text-green-400 group-hover:text-white transition-colors"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -383,19 +383,28 @@
                                 </svg>
                             </div>
                             <input type="email"
-                                class="focus:ring-brand-light focus:border-brand-light block w-full pl-10 sm:text-sm border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-md py-2.5 transition-colors"
+                                class="focus-visible:ring-brand-light focus:border-brand-light block w-full pl-10 sm:text-sm border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-md py-2.5 transition-colors"
                                 placeholder="nama@madawikri.com" value="developer@madawikri.com">
+                        </div>
+
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Departemen</label>
+                        <div class="relative rounded-md shadow-sm mb-4">
+                            <x-select>
+                                <option>IT & Development</option>
+                                <option>Human Resources</option>
+                                <option>Finance</option>
+                            </x-select>
                         </div>
 
                         <div class="flex items-center justify-between mb-4">
                             <label class="flex items-center">
                                 <input type="checkbox" checked
-                                    class="rounded border-gray-300 text-brand-dark focus:ring-brand-light dark:border-gray-600 dark:bg-gray-700 dark:checked:bg-brand-dark">
+                                    class="rounded border-gray-300 text-brand-dark focus-visible:ring-brand-light dark:border-gray-600 dark:bg-gray-700 dark:checked:bg-brand-dark">
                                 <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">Ingat saya</span>
                             </label>
                             <!-- Toggle Switch -->
                             <button type="button"
-                                class="bg-brand-dark relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-light"
+                                class="bg-brand-dark relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-light"
                                 role="switch" aria-checked="true">
                                 <span aria-hidden="true"
                                     class="translate-x-5 pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200"></span>
@@ -404,11 +413,11 @@
 
                         <div class="flex gap-3">
                             <button type="button"
-                                class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-gray-300 dark:border-gray-600 shadow-sm text-sm font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-light transition-colors">
+                                class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-gray-300 dark:border-gray-600 shadow-sm text-sm font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-light transition-colors">
                                 Batal
                             </button>
                             <button type="button"
-                                class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-brand-dark hover:bg-green-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-light transition-colors">
+                                class="flex-1 inline-flex justify-center items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-brand-dark hover:bg-green-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-light transition-colors">
                                 Simpan
                             </button>
                         </div>
@@ -459,8 +468,7 @@
                         <p class="text-gray-600 dark:text-gray-400 mb-4">Unduh repositori kerangka dasar yang sudah
                             dilengkapi dengan Tailwind V4 dan konfigurasi standar.</p>
                         <div class="bg-gray-900 rounded-lg p-3 text-left w-full shadow-md">
-                            <code class="text-green-400 text-xs font-mono">git clone
-                                https://github.com/PT-MWT/starter-kit.git</code>
+                            <code class="text-green-400 text-xs font-mono">git clone https://github.com/PT-MWT/starter-kit.git [nama-project]</code>
                         </div>
                     </div>
 
