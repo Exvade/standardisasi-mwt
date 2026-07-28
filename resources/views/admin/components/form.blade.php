@@ -31,12 +31,14 @@
             </div>
             <div>
                 <label for="category_id" class="block text-sm font-bold text-gray-700 mb-2">Kategori <span class="text-red-500">*</span></label>
-                <select name="category_id" id="category_id" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl focus:ring-brand-light focus:border-brand-light block p-3 transition-colors duration-200 ease-in-out" required>
-                    <option value="">-- Pilih Kategori --</option>
+                <x-select name="category_id" id="category_id" required>
+                    <option value="">Pilih Kategori...</option>
                     @foreach($categories as $category)
-                        <option value="{{ $category->id }}" {{ old('category_id', $component->category_id) == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
+                        <option value="{{ $category->id }}" {{ old('category_id', $component->category_id) == $category->id ? 'selected' : '' }}>
+                            {{ $category->name }}
+                        </option>
                     @endforeach
-                </select>
+                </x-select>
                 @error('category_id') <span class="text-red-500 text-sm mt-1 block font-medium">{{ $message }}</span> @enderror
             </div>
         </div>
@@ -44,10 +46,11 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
                 <label for="status" class="block text-sm font-bold text-gray-700 mb-2">Status <span class="text-red-500">*</span></label>
-                <select name="status" id="status" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl focus:ring-brand-light focus:border-brand-light block p-3 transition-colors duration-200 ease-in-out" required>
-                    <option value="draft" {{ old('status', $component->status) === 'draft' ? 'selected' : '' }}>Draft (Konsep)</option>
-                    <option value="published" {{ old('status', $component->status) === 'published' ? 'selected' : '' }}>Published (Publik)</option>
-                </select>
+                <x-select name="status" id="status" required>
+                    <option value="draft" {{ old('status', $component->status) == 'draft' ? 'selected' : '' }}>Draft</option>
+                    <option value="published" {{ old('status', $component->status) == 'published' ? 'selected' : '' }}>Published</option>
+                    <option value="deprecated" {{ old('status', $component->status) == 'deprecated' ? 'selected' : '' }}>Deprecated</option>
+                </x-select>
                 @error('status') <span class="text-red-500 text-sm mt-1 block font-medium">{{ $message }}</span> @enderror
             </div>
             <div>

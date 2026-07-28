@@ -33,10 +33,10 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label for="status" class="block text-sm font-bold text-gray-700 mb-2">Status <span class="text-red-500">*</span></label>
-                    <select name="status" id="status" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl focus:ring-brand-light focus:border-brand-light block p-3 transition-colors duration-200 ease-in-out" required>
-                        <option value="draft" {{ old('status', $asset->status) === 'draft' ? 'selected' : '' }}>Draft (Konsep)</option>
-                        <option value="published" {{ old('status', $asset->status) === 'published' ? 'selected' : '' }}>Published (Publik)</option>
-                    </select>
+                    <x-select name="status" id="status" required>
+                        <option value="active" {{ old('status', $asset->status) == 'active' ? 'selected' : '' }}>Active (Direkomendasikan)</option>
+                        <option value="deprecated" {{ old('status', $asset->status) == 'deprecated' ? 'selected' : '' }}>Deprecated (Sudah Usang)</option>
+                    </x-select>
                     @error('status') <span class="text-red-500 text-sm mt-1 block font-medium">{{ $message }}</span> @enderror
                 </div>
                 <div>

@@ -32,20 +32,24 @@
             
             <div>
                 <label for="type" class="block text-sm font-bold text-gray-700 mb-2">Tipe <span class="text-red-500">*</span></label>
-                <select name="type" id="type" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl focus:ring-brand-light focus:border-brand-light block p-3 transition-colors duration-200 ease-in-out" required>
-                    <option value="UI" {{ old('type', $guideline->type) === 'UI' ? 'selected' : '' }}>UI/UX & Frontend</option>
-                    <option value="Database" {{ old('type', $guideline->type) === 'Database' ? 'selected' : '' }}>Database</option>
-                    <option value="Lainnya" {{ old('type', $guideline->type) === 'Lainnya' ? 'selected' : '' }}>Lainnya</option>
-                </select>
+                <x-select name="type" id="type" required>
+                    <option value="">Pilih Tipe...</option>
+                    <option value="database" {{ old('type', $guideline->type) == 'database' ? 'selected' : '' }}>Database Naming</option>
+                    <option value="architecture" {{ old('type', $guideline->type) == 'architecture' ? 'selected' : '' }}>Software Architecture</option>
+                    <option value="ui_ux" {{ old('type', $guideline->type) == 'ui_ux' ? 'selected' : '' }}>UI/UX Guidelines</option>
+                    <option value="security" {{ old('type', $guideline->type) == 'security' ? 'selected' : '' }}>Security Rules</option>
+                    <option value="other" {{ old('type', $guideline->type) == 'other' ? 'selected' : '' }}>Lainnya</option>
+                </x-select>
                 @error('type') <span class="text-red-500 text-sm mt-1 block font-medium">{{ $message }}</span> @enderror
             </div>
             
             <div>
                 <label for="status" class="block text-sm font-bold text-gray-700 mb-2">Status <span class="text-red-500">*</span></label>
-                <select name="status" id="status" class="w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-xl focus:ring-brand-light focus:border-brand-light block p-3 transition-colors duration-200 ease-in-out" required>
-                    <option value="draft" {{ old('status', $guideline->status) === 'draft' ? 'selected' : '' }}>Draft (Konsep)</option>
-                    <option value="published" {{ old('status', $guideline->status) === 'published' ? 'selected' : '' }}>Published (Publik)</option>
-                </select>
+                <x-select name="status" id="status" required>
+                    <option value="draft" {{ old('status', $guideline->status) == 'draft' ? 'selected' : '' }}>Draft (Konsep)</option>
+                    <option value="published" {{ old('status', $guideline->status) == 'published' ? 'selected' : '' }}>Published (Dipublikasi)</option>
+                    <option value="archived" {{ old('status', $guideline->status) == 'archived' ? 'selected' : '' }}>Archived (Diarsipkan)</option>
+                </x-select>
                 @error('status') <span class="text-red-500 text-sm mt-1 block font-medium">{{ $message }}</span> @enderror
             </div>
         </div>
