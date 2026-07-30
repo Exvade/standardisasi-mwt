@@ -156,3 +156,7 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 - Do NOT delete tests without approval.
 
 </laravel-boost-guidelines>
+
+
+## Aturan Tambahan
+- **Action Buttons (Tabel/Card):** Jika Anda membuat tombol aksi (*Action Buttons*) seperti "Edit", "Hapus", atau "Detail" di dalam sebuah *Data Table* atau *Card*, **WAJIB menggunakan ikon SVG** (bukan teks biasa seperti tulisan "Edit"). Gunakan *icon* ringan (contoh: Heroicons) untuk menghemat ruang dan meningkatkan estetika UI.
