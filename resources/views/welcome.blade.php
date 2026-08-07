@@ -40,17 +40,16 @@
                         data, dan komponen UI siap pakai.
                     </p>
                     <div class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-                        <button
-                            onclick="navigator.clipboard.writeText('git clone https://github.com/PT-MWT/starter-kit.git [nama-project]'); Swal.fire({icon: 'success', title: 'Berhasil', text: 'Perintah clone berhasil disalin!', toast: true, position: 'top-end', showConfirmButton: false, timer: 3000, timerProgressBar: true});"
+                        <a href="https://github.com/Exvade/mwt-starter-kit" target="_blank"
                             class="group flex items-center justify-center px-6 py-3.5 text-sm font-semibold rounded-full text-white bg-brand-dark hover:bg-green-900 shadow-lg shadow-green-900/20 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-light">
                             <svg class="w-5 h-5 mr-2.5 text-green-400 group-hover:text-white transition-colors"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
-                                </path>
+                                fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                    clip-rule="evenodd" />
                             </svg>
-                            Salin Perintah Clone
-                        </button>
+                            Gunakan Template Repo
+                        </a>
                         <a href="{{ route('public.downloads.index') }}"
                             class="flex items-center justify-center px-6 py-3.5 text-sm font-semibold rounded-full text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600 shadow-sm transition-all duration-300">
                             Unduh Aset (.md)
@@ -463,12 +462,13 @@
                             <span
                                 class="text-3xl font-heading font-extrabold text-brand-dark dark:text-brand-light">1</span>
                         </div>
-                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2 font-heading">Clone Starter Repo
+                        <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-2 font-heading">Gunakan Template
                         </h4>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">Unduh repositori kerangka dasar yang sudah
-                            dilengkapi dengan Tailwind V4 dan konfigurasi standar.</p>
-                        <div class="bg-gray-900 rounded-lg p-3 text-left w-full shadow-md">
-                            <code class="text-green-400 text-xs font-mono">git clone https://github.com/PT-MWT/starter-kit.git [nama-project]</code>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Buka GitHub Starter Kit, klik tombol <span
+                                class="font-bold text-green-600 dark:text-green-400">Use this template</span> untuk membuat
+                            repositori proyek Anda tanpa mengotori riwayat git asli.</p>
+                        <div class="bg-gray-900 rounded-lg p-3 text-center w-full shadow-md border border-gray-800">
+                            <code class="text-gray-300 text-xs font-mono">Jangan clone repo Starter Kit!</code>
                         </div>
                     </div>
 
@@ -501,7 +501,8 @@
                                 class="italic font-medium">generate application key</span>, dan jalankan server
                             pengembangan lokal.</p>
                         <div class="bg-gray-900 rounded-lg p-3 text-left w-full shadow-md">
-                            <code class="text-blue-300 text-xs font-mono">php artisan key:generate<br>npm run dev</code>
+                            <code class="text-blue-300 text-xs font-mono">php artisan key:generate<br>composer run
+                                dev</code>
                         </div>
                     </div>
                 </div>
